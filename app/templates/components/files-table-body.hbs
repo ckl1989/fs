@@ -1,0 +1,11 @@
+{{#each root.children as |child|}}
+  {{files-table-row
+    fileEntry=child
+    hasActionColumn=hasActionColumn
+    hasCheckbox=hasCheckbox
+    actionHandler=actionHandler
+    onCreateFolder=onCreateFolder
+    onLaunchModal=onLaunchModal
+    level=0
+  }}
+{{/each}}

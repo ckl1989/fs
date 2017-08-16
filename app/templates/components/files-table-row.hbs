@@ -1,0 +1,62 @@
+<tr>
+  <td>
+    <div class="offset" style={{paddingLeft}}>
+      {{#if hasCheckbox}}
+        {{input
+          checked=fileEntry.selectedForDownload
+          type="checkbox"
+          indeterminate=fileEntry.selectedForDownloadIndeterminate
+        }}
+      {{/if}}
+      <img src={{icon}} width="16" height="16" alt="fileEntry">
+      {{#if isEditMode}}
+        {{input
+          autofocus=true
+          enter="saveFolder"
+          focus-out="saveFolder"
+          value=fileEntry.name
+        }}
+      {{else}}
+        {{#if hasLink}}
+          <a href="{{fileEntry.src}}">{{fileEntry.name}}</a>
+        {{else}}
+          {{fileEntry.name}}
+        {{/if}}
+      {{/if}}
+    </div>
+  </td>
+  <td>
+    {{fileEntry.size}}
+  </td>
+  <td>{{fileEntry.lastModified}}</td>
+  {{#if hasActionColumn}}
+    <td>
+      {{files-table-row-actions
+        fileEntry=fileEntry
+        onCreateFolder=onCreateFolder
+        onLaunchModal=onLaunchModal
+      }}
+    </td>
+  {{/if}}
+</tr>
+
+{{#if fileEntry.children}}
+  <!-- {{files-table-body
+    root=fileEntry
+    hasCheckbox=hasCheckbox
+    hasActionColumn=hasActionColumn
+    onCreateFolder=onCreateFolder
+    onLaunchModal=onLaunchModal
+  }} -->
+
+  {{#each fileEntry.children as |child|}}
+    {{files-table-row
+      fileEntry=child
+      level=nextLevel
+      hasCheckbox=hasCheckbox
+      hasActionColumn=hasActionColumn
+      onCreateFolder=onCreateFolder
+      onLaunchModal=onLaunchModal
+    }}
+  {{/each}}
+{{/if}}

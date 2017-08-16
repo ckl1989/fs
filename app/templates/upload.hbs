@@ -1,0 +1,22 @@
+<h4>Create Folders and Upload Files</h4>
+
+{{upload-toolbar
+  createFolder=(action "createFolder")
+  onLaunchModal=(action "launchModal")
+}}
+
+<!-- {{upload-table
+  model=model
+  hasActionColumn=true
+  onCreateFolder=(action "createFolder")
+}} -->
+
+{{files-table
+  rootFolder=model
+  hasCheckbox=false
+  hasActionColumn=true
+  onCreateFolder=(action "createFolder")
+  onLaunchModal=(action "launchModal")
+}}
+
+{{upload-modal onUploadFile=(action "createFile")}}

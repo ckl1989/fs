@@ -1,0 +1,17 @@
+.row,
+.cell {
+  border: 1px solid black;
+}
+
+.identifier {
+  padding-left: 10px;
+}
+
+.upload-toolbar {
+  float: right;
+}
+
+.download-toolbar {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,20 @@
+<h4>View and Download Folders and Files</h4>
+
+{{download-toolbar
+  onDownloadSelected=(action "onDownloadSelected")
+  onDownloadAll=(action "onDownloadAll")
+  folder=model
+  allFilesSize="165KB"
+}}
+
+<!-- {{upload-table
+  model=model
+  hasCheckbox=true
+  hasActionColumn=false
+}} -->
+
+{{files-table
+  rootFolder=model
+  hasCheckbox=true
+  hasActionColumn=false
+}}

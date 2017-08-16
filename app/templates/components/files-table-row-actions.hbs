@@ -1,0 +1,4 @@
+{{#if fileEntry.isFolder}}
+  <button {{action "createFolder" fileEntry}}>New Folder</button>
+  <button onClick={{action "launchModal" fileEntry}}>Upload File</button>
+{{/if}}

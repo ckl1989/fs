@@ -1,0 +1,32 @@
+<table class="table table-hover">
+  <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Last Modified</th>
+        {{#if hasActionColumn}}
+          <th>Actions</th>
+        {{/if}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model.children as |child|}}
+        {{#if child.isFolder}}
+          {{folder-component
+            folder=child
+            offset=0
+            hasCheckbox=hasCheckbox
+            onCreateFolder=onCreateFolder
+            hasActionColumn=hasActionColumn
+          }}
+        {{else}}
+          {{file-component
+            file=child
+            offset=0
+            hasCheckbox=hasCheckbox
+            hasActionColumn=hasActionColumn
+          }}
+        {{/if}}
+      {{/each}}
+    </tbody>
+</table>

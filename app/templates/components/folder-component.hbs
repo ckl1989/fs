@@ -1,0 +1,49 @@
+<tr>
+  <td>
+    <div class="offset" style={{paddingLeft}}>
+      {{#if hasCheckbox}}
+        {{input
+          checked=folder.selectedForDownload
+          indeterminate=folder.selectedForDownloadIndeterminate
+          type="checkbox"}}
+      {{/if}}
+      <img src="assets/images/folder.svg" width="16" height="16" alt="folder">
+      {{#if folder.isEditing}}
+        {{input
+          autofocus=true
+          enter="saveFolder"
+          focus-out="saveFolder"
+          value=folder.name
+        }}
+      {{else}}
+        {{folder.name}}
+      {{/if}}
+    </div>
+  </td>
+  <td>{{folder.size}}</td>
+  <td>{{folder.lastModified}}</td>
+  {{#if hasActionColumn}}
+    <td>
+      <button {{action "createFolder" folder}}>New Folder</button>
+      <button {{action "editFolder"}}>Rename</button>
+    </td>
+  {{/if}}
+</tr>
+
+{{#each folder.children as |child|}}
+  {{#if child.isFolder}}
+    {{folder-component
+      folder=child
+      offset=nextOffset
+      hasCheckbox=hasCheckbox
+      hasActionColumn=hasActionColumn
+    }}
+  {{else}}
+    {{file-component
+      file=child
+      offset=nextOffset
+      hasCheckbox=hasCheckbox
+      hasActionColumn=hasActionColumn
+    }}
+  {{/if}}
+{{/each}}

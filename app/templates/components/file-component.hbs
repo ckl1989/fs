@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <div class="offset" style={{paddingLeft}}>
+      {{#if hasCheckbox}}
+        {{input checked=file.selectedForDownload type="checkbox"}}
+      {{/if}}
+      {{#if file.isEditing}}
+      {{else}}
+        <img src="assets/images/file.svg" width="16" height="16" alt="file">
+        <a href="{{file.src}}">{{file.name}}</a>
+      {{/if}}
+    </div>
+  </td>
+  <td>
+    {{file.size}}
+  </td>
+  <td>{{file.lastModified}}</td>
+  {{#if hasActionColumn}}
+    <td></td>
+  {{/if}}
+</tr>

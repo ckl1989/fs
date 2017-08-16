@@ -12,6 +12,7 @@ You will need the following things properly installed on your computer.
 * [Bower](https://bower.io/)
 * [Ember CLI](https://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* [ember-cli-form-data]
 
 ## Installation
 
@@ -50,3 +51,29 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+##API Discussion
+
+../../getFolders
+../../createFolders
+
+GET ${url}/folders
+GET ${url}/folders/:id
+POST ${url}/folders    {name:"", parent:""}
+DELETE ${url}/folders/:id
+PATCH ${url}/folders/:id {name:""}
+
+GET ${url}/files
+GET ${url}/files/:id
+POST ${url}/files {file:""}
+
+GET ${url}/download {file:[], folders:[]} //traverse and select on submit
+GET ${url}/download {file:[]}
+
+T_Files
+[id, name, size, src, lastModified]
+T_Folders
+[id, name, size, lastModified]
+
+T_FileToFolder
+T_FolderToFolder

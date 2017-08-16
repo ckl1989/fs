@@ -1,0 +1,12 @@
+<div class="download-toolbar">
+  <div class="download-toolbar-left">
+    {{input
+      checked=folder.selectedForDownload
+      indeterminate=folder.selectedForDownloadIndeterminate
+      type="checkbox"}}
+    <button disabled={{downloadSelectedDisabled}} onClick={{action 'downloadSelected'}}>Download Selected</button>
+  </div>
+  <div class="download-toolbar-right">
+    <button disabled={{downloadAllDisabled}} onClick={{action 'downloadAll'}}>Download All <span>[{{folder.size}}]</span></button>
+  </div>
+</div>
