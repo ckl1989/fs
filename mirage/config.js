@@ -34,7 +34,16 @@ export default function() {
     return schema.fileSystems.all();
   });
 
-  this.post('/folders');
-  this.post('/files');
+  this.post('/folders', (schema, request) => {
+    let params = JSON.parse(request.requestBody);
+    console.log(request);
+    return schema.folders.create(request.requestBody);
+  });
+
+  this.post('/files', (schema, request) => {
+    let params = JSON.parse(request.requestBody);
+    console.log(request);
+    return schema.files.create(request.requestBody);
+  });
 
 }

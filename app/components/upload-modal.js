@@ -20,7 +20,7 @@ export default Ember.Component.extend({
 
       let fileUploadEl = document.getElementById('file-upload-field');
       let attachment = this.get("uploadedAttachment");
-
+      this.set('uploadedAttachment', null);
       this.get('onUploadFile')(attachment);
 
       //reset dialog
@@ -28,6 +28,8 @@ export default Ember.Component.extend({
 
       //option: convert file to base64 string and sent to backend
       //ds.string for model
+
+      //dammit dialog wont reset!! UGh
     },
     fileAttached(){
       let attachment = document.getElementById('file-upload-field').files[0];

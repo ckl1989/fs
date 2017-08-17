@@ -39,10 +39,10 @@ export default Ember.Controller.extend({
 
       let file = this.get('store').createRecord('file', {
         name: attachment.name,
-        parent: parentFolder,
-        size: attachment.size,
-        lastModified: new Date(),
-        attachment: attachment
+        // parent: parentFolder,
+        // size: attachment.size,
+        // lastModified: new Date(),
+        // attachment: attachment
       });
 
       file.save();
