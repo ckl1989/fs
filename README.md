@@ -2,15 +2,15 @@
 This is a POC of a file system App.
 
 Things demonstrated in the App:
--Ability to view nested organizational folders
--Ability to create and name folders at any nesting level
--Ability to choose a file from local storage and prepare it for upload to a server
+* Ability to view nested organizational folders
+* Ability to create and name folders at any nesting level
+* Ability to choose a file from local storage and prepare it for upload to a server
   (you can see that file is added to the Ember Data Store)
--Ability to choose individual files for download
+* Ability to choose individual files for download
   (you can see all file names selected for download in the console)
--Ability to choose all files for download
--Ability to choose folders for download
--Ability for UI checkbox table to know when some children row have be selected,
+* Ability to choose all files for download
+* Ability to choose folders for download
+* Ability for UI checkbox table to know when some children row have be selected,
   thus marking parent rows as indeterminate
 
 # Some Interesting Bits
